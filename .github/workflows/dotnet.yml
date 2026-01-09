@@ -37,10 +37,10 @@ jobs:
       run: dotnet restore   
 
     - name: Build
-      run: dotnet build --no-restore -c Debug
+      run: dotnet publish --no-restore -c Debug
 
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
-        name: Debug
-        path: ./bin/Debug/netstandard2.0/*
+        name: ${{ github.event.repository.name }}-Debug
+        path: ./bin/Debug/netstandard2.0/publish/*
