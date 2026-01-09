@@ -37,10 +37,10 @@ jobs:
       run: dotnet restore   
 
     - name: Build
-      run: dotnet build --no-restore -c Release
+      run: dotnet build --no-restore -c Debug
 
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
-        name: BetterUI
+        name: Debug
         path: ./bin/Release/netstandard2.0/*.dll
