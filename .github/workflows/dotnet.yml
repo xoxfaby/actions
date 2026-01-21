@@ -32,7 +32,6 @@ jobs:
     - name: Update Version
       run: sed -i "s/public const string Version = \".*\"/public const string Version = \"${{ steps.gitversion.outputs.MajorMinorPatch }}.${{ github.run_number }}\"/" **/*.cs
 
-
     - name: Restore dependencies
       run: dotnet restore   
 
